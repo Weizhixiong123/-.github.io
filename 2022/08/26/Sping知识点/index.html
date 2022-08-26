@@ -1,0 +1,311 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Sping知识点 | wubug</title><meta name="author" content="ZhiXiong Wei"><meta name="copyright" content="ZhiXiong Wei"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="SpringSpring是一个开源的Java框架平台，为容易快速的开发出耐用的java应用程序提供了全面的技术设施 Spring的优势：  非侵入式设计：应用程序对框架的依赖最小化，即Spring开发应用中的对象可以不依赖于Spring的API 方便解耦、简化开发：Spring就是一个大工厂，可以将所有对象的创建和依赖关系的维护都交给Spring管理，大大降低了程序之间的耦合性 IOC:Inver">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sping知识点">
+<meta property="og:url" content="https://weizhixiong123.github.io/2022/08/26/Sping%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
+<meta property="og:site_name" content="wubug">
+<meta property="og:description" content="SpringSpring是一个开源的Java框架平台，为容易快速的开发出耐用的java应用程序提供了全面的技术设施 Spring的优势：  非侵入式设计：应用程序对框架的依赖最小化，即Spring开发应用中的对象可以不依赖于Spring的API 方便解耦、简化开发：Spring就是一个大工厂，可以将所有对象的创建和依赖关系的维护都交给Spring管理，大大降低了程序之间的耦合性 IOC:Inver">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://weizhixiong123.github.io/img/default_top_img.jpg">
+<meta property="article:published_time" content="2022-08-26T13:23:57.000Z">
+<meta property="article:modified_time" content="2022-08-26T13:24:51.452Z">
+<meta property="article:author" content="ZhiXiong Wei">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://weizhixiong123.github.io/img/default_top_img.jpg"><link rel="shortcut icon" href="/img/coffer.jpg"><link rel="canonical" href="https://weizhixiong123.github.io/2022/08/26/Sping%E7%9F%A5%E8%AF%86%E7%82%B9/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Sping知识点',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-26 21:24:51'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/category_img.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categoties/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活 List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/share/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/default_top_img.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">wubug</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categoties/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活 List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/share/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Sping知识点</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-26T13:23:57.000Z" title="发表于 2022-08-26 21:23:57">2022-08-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-26T13:24:51.452Z" title="更新于 2022-08-26 21:24:51">2022-08-26</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Sping知识点"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><p>Spring是一个开源的Java框架平台，为容易快速的开发出耐用的java应用程序提供了全面的技术设施</p>
+<p><strong>Spring的优势</strong>：</p>
+<ol>
+<li>非侵入式设计：应用程序对框架的依赖最小化，即Spring开发应用中的对象可以不依赖于Spring的API</li>
+<li>方便解耦、简化开发：Spring就是一个大工厂，可以将所有对象的创建和依赖关系的维护都交给Spring管理，大大降低了程序之间的耦合性</li>
+<li>IOC:Inversion of Control的简写，控制反转，实现解耦功能，指的是将对象的创建权交给了Spring，使用Spring之前对象的创建都是由我们自己在代码中new出来的，而使用Spring之后对象的创建都交给了Spring框架，指在程序员编译后还能交由程序员控制，传统的创建方式就是new，但是new class是写在.java文件里的，编译后就成了.class字节文件，不能修改了，如果想使用抽象类和接口就非常不灵活，Spring就解决了这个问题。</li>
+<li>依赖注入DI：对象不需要手动的调用属性set方法去设置，而是配置的方式去赋值</li>
+<li>支持AOP：面向切面编程，通过预编译方式和允许期动态代理实现，在不修改源码的情况下，给程序动态统一添加功能的一种技术，简称AOP，是Spring框架的一个重要内容，是OOP的衍生模范，利用AOP对业务逻辑的各个部分进行隔离，降低业务逻辑的耦合性，提高程序的可重用型和开发效率。</li>
+<li>支持声明式事务处理： 一个程序的执行单元就是执行多条sql语句的方法，</li>
+<li>方便程序的测试：可以通过注解的方式测试Spring的程序</li>
+<li>方便集成各种优秀框架</li>
+<li>降低Java EE API的使用难度 对jdbc、javamail进行了封装</li>
+</ol>
+<h2 id="Spring模块"><a href="#Spring模块" class="headerlink" title="Spring模块"></a>Spring模块</h2><p>core:Beans,core,Context,SpEL</p>
+<p>Web:WebSocket,Servlet,Web,Porlet</p>
+<p>Data:JDBC,ORM,OXM,JMS,Transactions</p>
+<p>Other:AOP,Aspects,instrument,Messageing</p>
+<h1 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h1><h2 id="Core"><a href="#Core" class="headerlink" title="Core"></a>Core</h2><ol>
+<li>IoC(控制反转)：控制反转通过依赖注入的方式，来实现对象之间松耦合关系，程序运行时依赖对象会由一些辅助对象动态生成，并注入被依赖的对象中，动态绑定两者之间的关系，负责对象的生成和依赖的注入，然后交由我们使用，简而言之，IoC就是一个定义对象的依赖关系，而不创建他们的过程，在Spring中类的实例化、依赖的实例化、依赖的传入都交由Spring的Bean的容器来控制，而不是用new的方式实例化对象，实际的控制权已经交到Sping程序管理，而不是在最初的源码，所以叫控制反转，也就是对象控制权的反转。</li>
+<li>DI(依赖注入)：</li>
+<li>Bean配置、加载</li>
+</ol>
+<p>Beanfactory使用IoC模式将应用的配置和依赖性规范与实际的应用程序代码分开，Beanfactory使用依赖注入的方式提供给组件依赖，主要实现控制反转、依赖注入、Bean配置、加载。</p>
+<h3 id="Bean"><a href="#Bean" class="headerlink" title="Bean"></a>Bean</h3><p>JavaBean：1、是一个遵循特定写法的Java类，默认无参的构造函数，其中的类成员都是private(私有)的，有参数的构造器无法给成员变量赋值，而JavaBean中有get、set方法，更没有创建有参数重载的必要。2、需要被序列化、并实现了序列化的接口</p>
+<p>SpringBean：在Spring中，构成应用程序主干，并Spirng IOC容器管理的对象称为bean，bean是一个由Spring IoC容器实例化、组装和管理的对象</p>
+<p>SpringBean规范：1、所有属性为private      2、提供默认构造方法   3、提供getter和setter    4、实现serializable接口</p>
+<h2 id="Context"><a href="#Context" class="headerlink" title="Context"></a>Context</h2><p>Spring Context(上下文) 用来存储程序和一些初始化的信息，比如访问数据库之前要通过连接字符串来来获取数据库的操作对象，这些公共的东西就可以放在Context里</p>
+<p>启动Spring&#x3D;&#x3D;启动AbstractApplicationContext:</p>
+<p>Spring Context初始化从开始到结束整个过程中，都在这个方法里，创建、注册BeanFactory</p>
+<p>ApplicationContext:‘应用的前后关系’，继承了beanFactory的接口，通过Spring提供的IoC容器，可以将对象之间的依赖关系可以由Spring进行控制，有了Spring就不必再为单实例模式、属性文件解析等一些很底层需求来写代码，可以更加注重项目需求</p>
+<h2 id="SpEL"><a href="#SpEL" class="headerlink" title="SpEL"></a>SpEL</h2><p>全称：Sring Expression Language是一种简化开发的表达式，通过使用表达式来简化开发，减少一些逻辑、配置的编写</p>
+<ol>
+<li>使用bean的ID来引用bean</li>
+<li>调用方法和访问对象的属性</li>
+<li>正则表达式匹配</li>
+<li>对值进行算术、关系和逻辑运算</li>
+<li>集合操作</li>
+</ol>
+<h1 id="数据模块"><a href="#数据模块" class="headerlink" title="数据模块"></a>数据模块</h1><h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><p>Spring JDBC是Spring所提供的持久层技术，他的主要目的降低JDBC API 的使用难度</p>
+<p>三层架构：</p>
+<ol>
+<li>持久层：建立class实体类和数据库中数据表的映射，也叫ORM映射，数据库中的每个表都有一个对应的class文件，方便数据的操作。(比如数据库中有一个student表，有id、name、age三个字段，在java类中对应的就有一个student.java类，学生类里有id、name、age三个成员变量)</li>
+<li>业务层：被封装的方法</li>
+<li>表现层：前端部分，用来接收用户的请求和呈现数据，是与实际用户交互的部分</li>
+</ol>
+<h2 id="ORM"><a href="#ORM" class="headerlink" title="ORM"></a>ORM</h2><ol>
+<li>ORM是通过使用描述对象和数据库直接映射的元数据</li>
+<li>ORM框架采用元数据来描述对象：关系映射细节</li>
+<li>Spring对Hibernate等进行了封装</li>
+</ol>
+<h2 id="OXM"><a href="#OXM" class="headerlink" title="OXM"></a>OXM</h2><p>全称object xml Mapper</p>
+<p>目的是在Java对象和XML文档之间来回转换</p>
+<h2 id="JMS"><a href="#JMS" class="headerlink" title="JMS"></a>JMS</h2><p>JMS模块包含生成和消息的信息的功能，</p>
+<h2 id="Transactions"><a href="#Transactions" class="headerlink" title="Transactions"></a>Transactions</h2><p> 事务是用户定义的数据库操作的集合，这些操作作为一个完整的有机工作单元，要么全部正确执行，要么全部不执行。</p>
+<p>四大特征：原子性、一致性、隔离性、持久性</p>
+<h1 id="Web模块"><a href="#Web模块" class="headerlink" title="Web模块"></a>Web模块</h1><h2 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h2><p>WebSocket模块为WebSocket-based提供了支持，在web引用程序中提供了客户端和服务端之间通信的方式</p>
+<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><p>该模块包含Spring MVC的实现，Spring MVC框架使得模型范围内的代码和webform之间能够清晰的分离出来</p>
+<h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><p>模块提供了基本的面向web的集成功能，Web模块建立在应用程序上下文模块之上，包含Spring-WebMVC模块</p>
+<h2 id="Prolet"><a href="#Prolet" class="headerlink" title="Prolet"></a>Prolet</h2><p>Prolet模块提供了在Prolet环境中实现MVC，并且反映了web servlet模块的功能，Spring框架通过web mvc模块提供了自己的mvc实现，Spring框架中的Prolet mvc模块则是基于web mvc模块Prolet的实现</p>
+<h1 id="Other模块"><a href="#Other模块" class="headerlink" title="Other模块"></a>Other模块</h1><h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><p>提供了面向切面编程的实现，允许定义方法拦截器和切入点对代码进行解耦，实现了引用分离的功能，通过配置管理特性，Spring AOP模块直接将面向方面的编程集成到了Spring框架中，所以可以很容易的使用Spring框架管理任何对象支持AOP，AOP要达到的效果是保证开发者在不修改源代码的前提下，为系统中的业务组件添加某种功能。</p>
+<p>静态AOP：在编译阶段对程序源代码进行修改</p>
+<p>动态AOP：在运行阶段对动态生成代理对象</p>
+<h2 id="Aspects"><a href="#Aspects" class="headerlink" title="Aspects"></a>Aspects</h2><p>Aspects模块提供了与AspectJ的集成，这是一个功能强大且成熟的面向切面编程(AOP)框架。</p>
+<h2 id="instrument"><a href="#instrument" class="headerlink" title="instrument"></a>instrument</h2><p>instrument是类加载器的意思，提供了类工具的支持和类加载器的实现</p>
+<h2 id="Messaging"><a href="#Messaging" class="headerlink" title="Messaging"></a>Messaging</h2><p>spring-messaging模块为集成messaging <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=api&spm=1001.2101.3001.7020">api</a>和消息协议提供支持。</p>
+<h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><p>支持对具有JUnit或TestNG框架的Spring组件的测试</p>
+<h1 id="Spring核心"><a href="#Spring核心" class="headerlink" title="Spring核心"></a>Spring核心</h1><h2 id="设计模式：工厂模式"><a href="#设计模式：工厂模式" class="headerlink" title="设计模式：工厂模式"></a>设计模式：工厂模式</h2><p>在工厂模式中，在创建对象时不会对创建者暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象，定义一个创建对象的接口，让其子类来决定实例化哪个工厂类，工厂模式会使创建过程延迟到子类来进行</p>
+<h3 id="工厂模式优点："><a href="#工厂模式优点：" class="headerlink" title="工厂模式优点："></a>工厂模式优点：</h3><ol>
+<li>调用者只需要知道其名称就可以</li>
+<li>扩展性高，只要扩展一个工厂类就可以</li>
+<li>屏蔽产品的具体实现，调用者只关心产品的接口</li>
+</ol>
+<h3 id="工厂模式缺点"><a href="#工厂模式缺点" class="headerlink" title="工厂模式缺点"></a>工厂模式缺点</h3><p>每次增加一个产品时，都需要增加一个具体类和对象实现工厂，使得系统中的类的个数成倍增加，增加了系统的复杂度 </p>
+<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>这种设计模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建，这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象</p>
+<ol>
+<li><strong>注意：</strong>     单例类只能有一个实例</li>
+<li>单例类必须自己创建自己的唯一实例</li>
+<li>单例类必须给所有其他对象提供这以实例</li>
+</ol>
+<p>懒汉式： 时间换空间，每次获取实例的时候都会进行判断，看是否需要创建实例，这样显然就浪费了每次判断的时间。线程不安全</p>
+<p>饿汉式：空间换时间，类加载的时候已经创建好了类实例，每次调用的时候就不用去判断，节省了运行的时间，线程是安全的，执行效率很高，缺点：类加载的时候就已经实例化了，浪费了内存</p>
+<h1 id="IoC介绍"><a href="#IoC介绍" class="headerlink" title="IoC介绍"></a>IoC介绍</h1><p>Inversion of Control 控制权的反转，控制反转是指在程序开发中，实例的创建不在由调用者管理，而是由Spring容器创建，目的是增加灵活性，降低耦合度。Spirng程序会负责控制程序之间的关系，而不是由程序代码控制，因此控制权由程序代码转移到了Spring容器中。</p>
+<h2 id="IoC底层原理"><a href="#IoC底层原理" class="headerlink" title="IoC底层原理"></a>IoC底层原理</h2><p>XML、工厂模式、反射</p>
+<h2 id="BeanFactory"><a href="#BeanFactory" class="headerlink" title="BeanFactory"></a>BeanFactory</h2><p>  BeanFactory是基础类型的IoC容器，他提供了完整的IoC服务支持，BeanFactroy就是一个管理bean的工厂，主要负责初始化各种bean并调用他们生命周期方法</p>
+<p>BeanFactory接口有多个实现类,最常用XmlBeanFactroy，他是根据Xml配置文件的定义来装配bean的，创建beanFactory实例的时候需要提供Xml的据对路径地址</p>
+<h2 id="ApplicationContent"><a href="#ApplicationContent" class="headerlink" title="ApplicationContent"></a>ApplicationContent</h2><p>Spring官方更推荐的是ApplicationContext</p>
+<p>ApplicationContext接口有两个常用的实现类：</p>
+<p>ClassPathXmlApplicationContext,：从系统中的类路径去找xml来实现ApplicationContext</p>
+<p>FileSystemXmlApplicationContext：从文件系统中去找xml来实现ApplicationContext</p>
+<h1 id="Bean-1"><a href="#Bean-1" class="headerlink" title="Bean"></a>Bean</h1><p>Bean的对象是构成Spring程序的支柱，也是由Spring IoC容器管理的，在Spring中，构成应用程序主干，并由Spring IoC管理的对象，称之为Bean，Bean是由Spring IoC容器实例化、组装和管理的对象</p>
+<h2 id="Bean配置"><a href="#Bean配置" class="headerlink" title="Bean配置"></a>Bean配置</h2><p>基于注解的配置</p>
+<p>基于Java的配置</p>
+<p>基于XML的配置文件(常用)</p>
+<h2 id="Bean属性"><a href="#Bean属性" class="headerlink" title="Bean属性"></a>Bean属性</h2><p>class：用来创建bean的bean类</p>
+<p>name：这个属性指定唯一的bean标识符</p>
+<p>scope：是定义Bean的作用域</p>
+<p>List、Map、Set：是分别注入各自类型集合的</p>
+<p>value：bean里的字段赋值</p>
+<p>constructor-arg：通过构造函数注入</p>
+<p>property：通过setter对应的方法注入</p>
+<p>factory-bean：是生成bean的工厂对象</p>
+<p>lazy-initialzation mode :延迟初始化的bean</p>
+<p>initialization:回调方法(在bean的所有必须的属性被容器设置之后)</p>
+<p>destruction:回调方法 (当包含该bean的容器被销毁时)</p>
+<h2 id="Bean的实例化"><a href="#Bean的实例化" class="headerlink" title="Bean的实例化"></a>Bean的实例化</h2><ol>
+<li>构造器实例化</li>
+<li>静态工厂方法实例化</li>
+<li>实例工厂方法实例化</li>
+<li>实现FactoryBean接口实例化</li>
+</ol>
+<h2 id="Bean的作用域"><a href="#Bean的作用域" class="headerlink" title="Bean的作用域"></a>Bean的作用域</h2><p>当一个Spring定义一个bean时必须声明这个bean的作用域</p>
+<ol>
+<li>singleton(单例模式)：确保Spring容器中只会存在一个共享的Bean实例</li>
+<li>prototype(原型模式)：每次请求bean或者将其注入到另一个bean时都会创建一个新的实例</li>
+<li>request(每次HTTP、每次Bean实例)：每次有http请求时，都会创建新的实例</li>
+<li>session(每次会话、每次Bean实例)：同一个Http Session(会话)之间共享一个bean，而不同的会话使用不同的bean</li>
+<li>global Session(全局的Session)</li>
+</ol>
+<h2 id="Bean生命周期"><a href="#Bean生命周期" class="headerlink" title="Bean生命周期"></a>Bean生命周期</h2><p>当一个Bean被加载到Spring容器时，他就具有了生命</p>
+<p>生命周期：实例化、属性赋值、初始化、销毁 </p>
+<h2 id="Bean继承"><a href="#Bean继承" class="headerlink" title="Bean继承"></a>Bean继承</h2><p>Spring Bean定义的继承与Java类的继承无关，但是继承的概念是一样的</p>
+<h2 id="Bean自动装配"><a href="#Bean自动装配" class="headerlink" title="Bean自动装配"></a>Bean自动装配</h2><p>手动装配：要自己定义属性然后赋值</p>
+<p>自动装配：Spring IoC容器可以进行自动装配Bean，需要在@Autowired属性定义自动装配模式</p>
+<p>自动装配模式：</p>
+<p>byType(根据类型自动装配)</p>
+<p>byName（根据名称自动装配）</p>
+<p>constructor(通过构造器自动装配)</p>
+<h2 id="Bean事件处理"><a href="#Bean事件处理" class="headerlink" title="Bean事件处理"></a>Bean事件处理</h2><p>你已经看见了所有的Spring核心都是ApplicationContext负责bean的完整生命周期，当加载Bean时ApplicationContext发布某些类型的事件</p>
+<ol>
+<li>ContextRefreshEvent</li>
+<li>ContextStartedEvent</li>
+<li>ContextStoppedEvent</li>
+<li>ContextClosedEvent</li>
+<li>RequestHandledEvent</li>
+</ol>
+<h2 id="Bean后置处理器"><a href="#Bean后置处理器" class="headerlink" title="Bean后置处理器"></a>Bean后置处理器</h2><p>BeanPostProcessor接口定义回调方法，你可以实现该方法来提供自己的实例化的逻辑，可以插入一个或多个自定义BeanPostProcessor实现来完成实例化，配置和初始化一个Bean之后来实现自己自定义的回调方法</p>
+<h2 id="Bean注解配置"><a href="#Bean注解配置" class="headerlink" title="Bean注解配置"></a>Bean注解配置</h2><p>@Required：用于Bean的setter方法，表明受影响的Bean在配置中，必须放在xml文件中，否则就会抛出异常，5.0以后弃用了</p>
+<p>@Autoired：可以用在bean的setter方法，非setter方法，和构造函数</p>
+<h1 id="DI"><a href="#DI" class="headerlink" title="DI"></a>DI</h1><p>依赖注入和控制反转含义相同，他们是从两个角度描述的同一个概念，</p>
+<p><strong>控制反转</strong>：由Spring容器来创建，Spring容器会负责控制程序之间的关系，这样控制权便由应用代码转移到Spring容器，控制权发生了反转</p>
+<p><strong>依赖注入</strong>：Spring容器负责将被依赖对象赋值给调用者的成员变量，这就相当于为调用者注入了它依赖的实例</p>
+<h2 id="属性注入"><a href="#属性注入" class="headerlink" title="属性注入"></a>属性注入</h2><p>指IoC容器使用setter方法注入被依赖的实例，通过调用无参构造器、或无参static工厂方法，实例化bean后，调用bean的setter方法，即可实现基于setter的DI</p>
+<h1 id="JDBC-1"><a href="#JDBC-1" class="headerlink" title="JDBC"></a>JDBC</h1><p>Spring JDBC是基于普通的JDBC的 ，(如果自己从头开始写JDBC会出现很多考虑不到和处理不好的细节，比如根据链接字符串获取数据库的对象还有准备和执行sql语句、处理异常、处理事务对象的回收、与创建，到最后关闭连接，轻则影响程序的性能，重则导致程序崩溃)</p>
+<p>Jdbc Template是Spring框架中提供的一个对象，是对原始jdbc API对象简单的封装，Spring框架为我们提供了很多操作模板类，比如操作关系型数据库Jdbc Template，Jdbc Template类是线程安全配置，所以可以配置Jdbc单个实例，然后将共享的引用安全的注入到多个dao中，使用Jdbc Template类的时候常见做法：可以在Spring配置文件中配置数据源，然后共享数据源的bean依赖注入到dao类，并且在数据源的设值函数中创建了Jdbc Template</p>
+<p>DTO(Data Transfer Object):定义的是实体类.class文件，该文件包含实体类的属性对应的get、set 方法，一般的命名时user.DTO</p>
+<p>DAO(Data Access Object):会调用DTO层，DAO层中定义的实际使用方法(增删改查),一般命名userMapper</p>
+<h2 id="CRUD"><a href="#CRUD" class="headerlink" title="CRUD"></a>CRUD</h2><p>jdbc.query():SQL-SELECT</p>
+<p>jdbc.update():SQL_UPDATE、SQL_INSERT</p>
+<p>jdbc.execute() : SQL_ALTER</p>
+<h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><p>Maven是一个项目管理和构建自动化工具</p>
+<h1 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h1><p>传统的Spring项目框架搭建需要大量的配置， 而且项目的开发、测试 都需要依赖服务器，开比较耗时，而且容易出错，SpringBoot由第三方团队提供的全新框架，是为了让程序员更好、更方便的使用Spring，把繁琐的Spring配置进行了简化，由于Springboot自带服务器，所以项目可以直接以jar的形式去运行，方便了开发、测试、部署的环节，搭建SpringBoot框架不需要对Spirng进行过多的配置，就可以运行</p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ol>
+<li>搭建项目快</li>
+<li>让测试变的简单内置的Junit、SpringBoot test等多种测试框架</li>
+<li>Spring Boot让配置变得简单</li>
+<li>内嵌容器 省去了配置tomcat的时间</li>
+<li>方便监控 SpringBoot有 actuator组件提供了应用程序的系统监控 可以查看应用系统的详细信息</li>
+</ol>
+ <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+ <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+ <property name="url" value="jdbc:mysql://localhost:3306/stu_db?serverTimeZone=UTC&amp;useSSL=false"></property>
+ <property name="username" value="root"></property>
+ <property name="password" value="wzx"></property> 
+</bean>
+<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+ <property name="dataSource" ref="dataSource"></property>
+
+</bean></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://Weizhixiong123.github.io">ZhiXiong Wei</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://weizhixiong123.github.io/2022/08/26/Sping%E7%9F%A5%E8%AF%86%E7%82%B9/">https://weizhixiong123.github.io/2022/08/26/Sping知识点/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://Weizhixiong123.github.io" target="_blank">wubug</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/default_top_img.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/08/08/ArrayList%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/"><img class="next-cover" src="/img/default_top_img.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">ArrayList</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/category_img.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ZhiXiong Wei</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring"><span class="toc-number">1.</span> <span class="toc-text">Spring</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring%E6%A8%A1%E5%9D%97"><span class="toc-number">1.1.</span> <span class="toc-text">Spring模块</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97"><span class="toc-number">2.</span> <span class="toc-text">核心模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Core"><span class="toc-number">2.1.</span> <span class="toc-text">Core</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Bean"><span class="toc-number">2.1.1.</span> <span class="toc-text">Bean</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Context"><span class="toc-number">2.2.</span> <span class="toc-text">Context</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SpEL"><span class="toc-number">2.3.</span> <span class="toc-text">SpEL</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9D%97"><span class="toc-number">3.</span> <span class="toc-text">数据模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC"><span class="toc-number">3.1.</span> <span class="toc-text">JDBC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ORM"><span class="toc-number">3.2.</span> <span class="toc-text">ORM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OXM"><span class="toc-number">3.3.</span> <span class="toc-text">OXM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JMS"><span class="toc-number">3.4.</span> <span class="toc-text">JMS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Transactions"><span class="toc-number">3.5.</span> <span class="toc-text">Transactions</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Web%E6%A8%A1%E5%9D%97"><span class="toc-number">4.</span> <span class="toc-text">Web模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#WebSocket"><span class="toc-number">4.1.</span> <span class="toc-text">WebSocket</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Servlet"><span class="toc-number">4.2.</span> <span class="toc-text">Servlet</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web"><span class="toc-number">4.3.</span> <span class="toc-text">Web</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prolet"><span class="toc-number">4.4.</span> <span class="toc-text">Prolet</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Other%E6%A8%A1%E5%9D%97"><span class="toc-number">5.</span> <span class="toc-text">Other模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#AOP"><span class="toc-number">5.1.</span> <span class="toc-text">AOP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Aspects"><span class="toc-number">5.2.</span> <span class="toc-text">Aspects</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#instrument"><span class="toc-number">5.3.</span> <span class="toc-text">instrument</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Messaging"><span class="toc-number">5.4.</span> <span class="toc-text">Messaging</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Test"><span class="toc-number">5.5.</span> <span class="toc-text">Test</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring%E6%A0%B8%E5%BF%83"><span class="toc-number">6.</span> <span class="toc-text">Spring核心</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="toc-number">6.1.</span> <span class="toc-text">设计模式：工厂模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="toc-number">6.1.1.</span> <span class="toc-text">工厂模式优点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E7%BC%BA%E7%82%B9"><span class="toc-number">6.1.2.</span> <span class="toc-text">工厂模式缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F"><span class="toc-number">6.2.</span> <span class="toc-text">单例模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IoC%E4%BB%8B%E7%BB%8D"><span class="toc-number">7.</span> <span class="toc-text">IoC介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#IoC%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86"><span class="toc-number">7.1.</span> <span class="toc-text">IoC底层原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BeanFactory"><span class="toc-number">7.2.</span> <span class="toc-text">BeanFactory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ApplicationContent"><span class="toc-number">7.3.</span> <span class="toc-text">ApplicationContent</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Bean-1"><span class="toc-number">8.</span> <span class="toc-text">Bean</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Bean%E9%85%8D%E7%BD%AE"><span class="toc-number">8.1.</span> <span class="toc-text">Bean配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bean%E5%B1%9E%E6%80%A7"><span class="toc-number">8.2.</span> <span class="toc-text">Bean属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bean%E7%9A%84%E5%AE%9E%E4%BE%8B%E5%8C%96"><span class="toc-number">8.3.</span> <span class="toc-text">Bean的实例化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bean%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">8.4.</span> <span class="toc-text">Bean的作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bean%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">8.5.</span> <span class="toc-text">Bean生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bean%E7%BB%A7%E6%89%BF"><span class="toc-number">8.6.</span> <span class="toc-text">Bean继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bean%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D"><span class="toc-number">8.7.</span> <span class="toc-text">Bean自动装配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bean%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86"><span class="toc-number">8.8.</span> <span class="toc-text">Bean事件处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bean%E5%90%8E%E7%BD%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">8.9.</span> <span class="toc-text">Bean后置处理器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bean%E6%B3%A8%E8%A7%A3%E9%85%8D%E7%BD%AE"><span class="toc-number">8.10.</span> <span class="toc-text">Bean注解配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DI"><span class="toc-number">9.</span> <span class="toc-text">DI</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E6%B3%A8%E5%85%A5"><span class="toc-number">9.1.</span> <span class="toc-text">属性注入</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JDBC-1"><span class="toc-number">10.</span> <span class="toc-text">JDBC</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CRUD"><span class="toc-number">10.1.</span> <span class="toc-text">CRUD</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Maven"><span class="toc-number">11.</span> <span class="toc-text">Maven</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SpringBoot"><span class="toc-number">12.</span> <span class="toc-text">SpringBoot</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-number">12.1.</span> <span class="toc-text">特点</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/08/26/Sping%E7%9F%A5%E8%AF%86%E7%82%B9/" title="Sping知识点"><img src="/img/default_top_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Sping知识点"/></a><div class="content"><a class="title" href="/2022/08/26/Sping%E7%9F%A5%E8%AF%86%E7%82%B9/" title="Sping知识点">Sping知识点</a><time datetime="2022-08-26T13:23:57.000Z" title="发表于 2022-08-26 21:23:57">2022-08-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/08/ArrayList%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/" title="ArrayList"><img src="/img/default_top_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ArrayList"/></a><div class="content"><a class="title" href="/2022/08/08/ArrayList%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/" title="ArrayList">ArrayList</a><time datetime="2022-08-08T11:54:23.000Z" title="发表于 2022-08-08 19:54:23">2022-08-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/08/java%E7%9F%A5%E8%AF%86%E7%82%B9/" title="发布博客"><img src="/img/default_top_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="发布博客"/></a><div class="content"><a class="title" href="/2022/08/08/java%E7%9F%A5%E8%AF%86%E7%82%B9/" title="发布博客">发布博客</a><time datetime="2022-08-08T10:19:32.000Z" title="发表于 2022-08-08 18:19:32">2022-08-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By ZhiXiong Wei</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
